@@ -2,6 +2,12 @@
 
 Engineering blueprint and implementation for the **Cymbal Bank** Vernacular Collections & Recovery Voice Agent.
 
+- **Live Cloud Run Service (`cymbal-collections-voice`, `asia-south1`)**: `https://cymbal-collections-voice-355880143137.asia-south1.run.app`
+  - **1-Click Browser Demo Cockpit (`/`)**: `https://cymbal-collections-voice-355880143137.asia-south1.run.app/`
+  - **Web Audio Phone Receiver (`/mobile`)**: `https://cymbal-collections-voice-355880143137.asia-south1.run.app/mobile/`
+  - **Live Call Monitor & Ask Negotiation Ladder (`/monitor`)**: `https://cymbal-collections-voice-355880143137.asia-south1.run.app/monitor/`
+- **GitHub Repository**: `https://github.com/adhishthite/cymbal-bank-collections-demo`
+
 This application is an outbound vernacular voice bot for gold loan interest collections. The bot speaks through the **Gemini 3.8 Live API** (`gemini-3.8-live`) on Vertex AI. A FastAPI backend on Cloud Run (`cymbal-collections-voice`) holds the deterministic 2,000-account store, Ask ladder calculation, and tool invariants. A **Gemini Enterprise** (GE) agent built with the Agent Development Kit (ADK) and a **1-Click Browser Demo Cockpit** (`/`) start calls and inspect outcomes. Calls run over WebSockets directly to the `/mobile` Web Audio receiver (`TELEPHONY_MODE=mobile`, `TWILIO=off`) with live transcript and Ask ladder visualization on `/monitor`.
 
 ---
