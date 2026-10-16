@@ -1,0 +1,36 @@
+[project]
+name = "muthoot-collections-agent"
+version = "0.1.0"
+description = "Cymbal Bank Collections GE agent: ADK on Agent Runtime"
+requires-python = ">=3.13"
+dependencies = [
+    "a2a-sdk[http-server]>=0.3.25,<0.4",
+    "google-adk",
+    "google-cloud-aiplatform[agent_engines,adk]>=1.112",
+    "google-cloud-secret-manager",
+    "httpx",
+    "opentelemetry-api",
+    "opentelemetry-exporter-gcp-trace>=1.15.0",
+    "opentelemetry-instrumentation-asgi>=0.63b1",
+    "opentelemetry-sdk>=1.42.1",
+]
+
+[dependency-groups]
+dev = [
+    "a2ui-agent-sdk>=0.7.0",
+    "pytest>=9.1.1",
+    "ruff",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

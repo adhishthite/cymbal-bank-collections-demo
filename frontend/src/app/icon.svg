@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Cymbal Bank Collections</title>
+  <path fill="#1b4d89" d="M16 4H48A12 12 0 0 1 60 16V38A12 12 0 0 1 48 50H28L15 60V50A12 12 0 0 1 4 38V16A12 12 0 0 1 16 4Z"/>
+  <path fill="none" stroke="#c9a45c" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" d="M22 13H42M22 21H42M28 13C40 13 40 29 28 29H22L40 42"/>
+</svg>

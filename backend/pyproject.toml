@@ -1,0 +1,45 @@
+[project]
+name = "muthoot-collections"
+version = "0.1.0"
+description = "Cymbal Bank Collections Voice backend: account store, GE agent API, Live voice bridge"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "audioop-lts>=0.2.1",
+    "fastapi>=0.142.2",
+    "google-genai>=2.25.0",
+    "httpx>=0.28.1",
+    "opentelemetry-api>=1.45.0",
+    "opentelemetry-exporter-gcp-trace>=1.15.0",
+    "opentelemetry-instrumentation-fastapi>=0.66b0",
+    "opentelemetry-resourcedetector-gcp>=1.14.0",
+    "opentelemetry-sdk>=1.45.0",
+    "pydantic>=2.13.5",
+    "typesafe-sdk>=0.7.2",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.11,<0.12"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.10",
+]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# The Live system instruction keeps one sentence on each line.
+"src/muthoot_collections/live_session.py" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: a test against the real Live, decision and consent models"]

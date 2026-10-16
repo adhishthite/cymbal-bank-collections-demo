@@ -1,0 +1,14 @@
+.git
+.remember
+**/.venv
+**/__pycache__
+**/.ruff_cache
+**/.pytest_cache
+docs
+agent
+frontend/node_modules
+frontend/.next
+frontend/out
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
+.env*
