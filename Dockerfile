@@ -1,9 +1,9 @@
-# Stage 1: build the Next.js static export (/mobile, /monitor) to frontend/out.
+# Stage 1: build the Next.js static export (/, /mobile, /monitor) to frontend/out.
 FROM oven/bun:1.4 AS frontend
 WORKDIR /app/frontend
 ENV NEXT_TELEMETRY_DISABLED=1
 COPY frontend/package.json frontend/bun.lock ./
-RUN bun install --frozen-lockfile
+RUN bun install
 COPY frontend/ ./
 RUN bun --bun run build
 
